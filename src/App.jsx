@@ -1,13 +1,17 @@
-import { useState } from "react";
-
-function App() {
-  const [count, setCount] = useState(0);
-
+import { RouterProvider } from "react-router-dom";
+import router from "./router";
+import MainLayout from "./layouts/MainLayout";
+import ContentLayout from "./layouts/ContentLayout";
+import Navbar from "./components/Navbar";
+const App = () => {
   return (
-    <div className="App">
-      <h1 className="font-bold text-2xl">React Tailwind</h1>
-    </div>
+    <MainLayout>
+      <Navbar />
+      <ContentLayout>
+        <RouterProvider router={router} />
+      </ContentLayout>
+    </MainLayout>
   );
-}
+};
 
 export default App;
